@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+header {
+  background-color: $light;
+  text-align: center;
+
+  .navbar {
+    a {
+      display: inline-block;
+      color: $dark;
+      text-decoration: none;
+      padding: 1rem;
+
+      &:hover {
+        background-color: $secondary_color;
+      }
+
+      &.active {
+        background-color: $secondary_color;
+      }
+    }
+  }
+}
