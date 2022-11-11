@@ -1,0 +1,16 @@
+@use '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@use './partials/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $dc-darker;
+  color: $dc-light;
+  font-family: $dc-font;
+
+}
