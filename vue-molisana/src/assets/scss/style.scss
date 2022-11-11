@@ -1,18 +1,7 @@
+@use './partials/common';
 @use './partials/header';
 @use './partials/main';
 @use './node_modules/bootstrap/scss/bootstrap-grid.scss';
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #ededed;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 
 footer {
   font-size: 0.9rem;
