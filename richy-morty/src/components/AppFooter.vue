@@ -1,12 +1,28 @@
 <script>
+import { store as state } from '../store.js';
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
+  data() {
+    return {
+      state
+    }
+  },
+  /*  methods: {
+      totalResults() {
+        return this.state.characters.length
+      }
+    }, */
+  computed: {
+    totalResults() {
+      return this.state.characters.length
+    }
+  }
 }
 </script>
 
 <template>
-  <footer>
-    <p>Results: 20</p>
+  <footer class="text-center py-4">
+    <p v-if="state.characters !== null">Results: {{ totalResults }}</p>
   </footer>
 </template>
 

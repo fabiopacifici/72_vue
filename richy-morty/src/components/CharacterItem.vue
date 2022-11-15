@@ -8,7 +8,7 @@ export default {
 </script>
 <template>
   <div class="col">
-    <div class="character">
+    <div class="character text-center">
       <img :src="character.image" :alt="character.name" class="rounded-circle">
       <h3>{{ character.name }}</h3>
       <div class="status">{{ character.status }}</div>
