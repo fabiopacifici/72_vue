@@ -22,7 +22,8 @@ export default {
     <div class="container p-5 bg-white">
 
       <div class="alert dark" role="alert">
-        <strong>Found 62</strong> Characters
+        <!-- TODO: make a coputed prop -->
+        <strong>Found {{ state.actors.length }}</strong> Characters
       </div>
 
 
