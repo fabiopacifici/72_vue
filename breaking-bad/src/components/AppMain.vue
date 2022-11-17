@@ -1,7 +1,6 @@
 <script>
 import ActorsList from './ActorsList.vue';
 import FilterCategory from './FilterCategory.vue';
-import axios from 'axios'
 import { store as state } from '../store.js'
 
 export default {
@@ -16,32 +15,8 @@ export default {
       state
     }
   },
-  methods: {
-    callApi(url) {
-      console.log(this.state.selectCategory, 'riga 21');
-      if (this.state.selectCategory !== '') {
-        //?category=Better+Call+Saul
-        url += `?${this.state.categoryParameter}=${this.state.selectCategory}`
-      }
-      console.log(url);
-
-      axios
-        .get(url)
-        .then(response => {
-          //console.log(response.data);
-          this.state.actors = response.data
-          this.state.loading = false
-        })
-        .catch(err => {
-          console.error(err.message);
-          this.state.errorMessage = err.message
-          this.state.loading = false
-        })
-
-    }
-  },
   mounted() {
-    this.callApi(this.state.API_url)
+    this.state.callApi(this.state.API_url)
   }
 }
 
@@ -49,7 +24,7 @@ export default {
 
 <template>
   <main id="site_main">
-    <FilterCategory @filterByCategory="callApi(state.API_url)" />
+    <FilterCategory @filterByCategory="state.callApi(state.API_url)" />
     <ActorsList />
   </main>
 </template>
